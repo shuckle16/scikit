@@ -6,6 +6,8 @@ from sklearn.cross_validation import train_test_split
 from sklearn.metrics import classification_report
 from sklearn.pipeline import Pipeline
 from sklearn.grid_search import GridSearchCV
+from sklearn.metrics import roc_curve
+from sklearn.metrics import roc_auc_score
 
 
 df = pd.read_csv('http://archive.ics.uci.edu/ml/machine-learning-databases/internet_ads/ad.data', header=None)
@@ -44,3 +46,4 @@ print(classification_report(y_test, predictions))
 
 pd.crosstab(pd.core.series.Series(y_test), predictions, rownames=['actual'], colnames=['preds'])
 
+roc_auc_score(y_test,predictions)
