@@ -44,6 +44,6 @@ for param_name in sorted(parameters.keys()):
 predictions = grid_searcher.predict(X_test)
 print(classification_report(y_test, predictions))
 
-pd.crosstab(pd.core.series.Series(y_test), predictions, rownames=['actual'], colnames=['preds'])
+print pd.crosstab(pd.core.series.Series(y_test), predictions, rownames=['actual'], colnames=['preds'])
 
-roc_auc_score(y_test,predictions)
+print roc_auc_score(y_test,predictions)

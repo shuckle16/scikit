@@ -41,6 +41,14 @@ for c in costs:
 svr_final = SVR(kernel='rbf',C=best_c,gamma=best_gamma)
 y_final =  svr_final.fit(x_train,y_train).predict(x_test)
 
+done = time.time()
+
+elapsed = done - now
+print elapsed, "seconds elapsed"
+
+print "r^2 score:", r2_score(y_final,y_test)
+
 plt.plot(a,b,c='k',label='data')
 plt.scatter(x_test,y_final,c='b',s=50)
 plt.show()
+
