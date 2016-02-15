@@ -7,12 +7,10 @@ from sklearn.metrics import classification_report
 from sklearn.metrics import roc_curve
 from sklearn.metrics import roc_auc_score
 
-df = pd.read_csv('http://archive.ics.uci.edu/ml/machine-learning-databases/internet_ads/ad.data', header=None)
-explanatory_vars = set(df.columns.values)
-response_var = df[len(df.columns.values)-1]
-explanatory_vars.remove(len(df.columns.values)-1)
+df = pd.read_csv('data/ad.data', header=None)
 
-# df.drop ?? 
+response_var = df[len(df.columns.values)-1]
+df.drop(df.columns[[len(df.columns)-1]],axis=1,inplace=True)
 
 y = [1 if e == 'ad.' else 0 for e in response_var]
 X = df[list(explanatory_vars)]
