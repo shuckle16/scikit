@@ -13,7 +13,7 @@ response_var = df[len(df.columns.values)-1]
 df.drop(df.columns[[len(df.columns)-1]],axis=1,inplace=True)
 
 y = [1 if e == 'ad.' else 0 for e in response_var]
-X = df[list(explanatory_vars)]
+X = df
 
 # deal with missing values
 X.replace(to_replace=' *\?', value=-1, regex=True, inplace=True)
