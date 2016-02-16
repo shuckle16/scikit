@@ -21,10 +21,6 @@ X.replace(to_replace=' *\?', value=-1, regex=True, inplace=True)
 
 X_train, X_test, y_train, y_test = train_test_split(X, y)
 
-# print(len(X_train))
-# print(len(X_test))
-
-
 
 params = [{'alpha': [.1,.01,.001,.0001],'n_iter':[100,500,1000]}]
 
