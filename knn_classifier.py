@@ -1,6 +1,7 @@
 # example of random forest classifier (thanks internet person)
 
 import pandas as pd
+import matplotlib.pyplot as plt
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.cross_validation import train_test_split
 from sklearn.metrics import roc_curve
