@@ -1,10 +1,9 @@
-# example of random forest classifier (thanks internet person)
+# example of knn classifier
 
 import pandas as pd
 import matplotlib.pyplot as plt
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.cross_validation import train_test_split
-from sklearn.metrics import roc_curve
 from sklearn.metrics import roc_auc_score
 
 df = pd.read_csv('data/ad.data', header=None)
@@ -21,7 +20,7 @@ X.replace(to_replace=' *\?', value=-1, regex=True, inplace=True)
 X_train, X_test, y_train, y_test = train_test_split(X, y)
 
 aucs = []
-neighbors = [2,3,4,5,8,10,12,25]
+neighbors = [2**i for i in range(1,8)]
 
 for neighbs in neighbors:
     knn = KNeighborsClassifier(neighbs, weights='distance')
